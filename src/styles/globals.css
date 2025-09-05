@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Blue (Primary) */
+  --blue-100: #d1f0ff;
+  --blue-200: #b0e0f5;
+  --blue-500: #177cff;
+  --blue-600: #0750ff;
+
+  /* Neutral */
+  --neutral-0: #ffffff;
+  --neutral-100: #f8f9fa;
+  --neutral-200: #e0e0e0;
+  --neutral-300: #c0c0c0;
+  --neutral-400: #a5a6a8;
+  --neutral-700: #666666;
+  --neutral-800: #323234;
+  --neutral-900: #121314;
+
+  /* Red */
+  --red-100: #fee1e2;
+  --red-200: #fbcaca;
+  --red-300: #f9acab;
+  --red-400: #f87171;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+
+  /* Yellow */
+  --yellow-100: #fdf9c7;
+  --yellow-200: #fdea9a;
+  --yellow-300: #fdcb40;
+  --yellow-400: #fbbf24;
+  --yellow-500: #f59e0b;
+  --yellow-600: #d97706;
+  --yellow-btn: #FFF34D;
+
+  /* Green */
+  --green-100: #d1fadf;
+  --green-200: #a7f3d0;
+  --green-300: #6ee7b7;
+  --green-400: #34d399;
+  --green-500: #10b981;
+  --green-600: #059669;
+
+   /* pink */
+  --pink-background: #F2C7BA;
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+
+    /* Blue (Primary) */
+    --blue-100: #d1f0ff;
+    --blue-border: #E6EFF5;
+    --blue-200: #b0e0f5;
+    --blue-500: #177cff;
+    --blue-600: #0750ff;
+    --blue-border-before: #2D60FF;
+
+    /* Neutral */
+    --neutral-0: #ffffff;
+    --neutral-100: #f8f9fa;
+    --neutral-200: #e0e0e0;
+    --neutral-300: #c0c0c0;
+    --neutral-400: #a5a6a8;
+    --neutral-700: #666666;
+    --neutral-800: #323234;
+    --neutral-900: #121314;
+    --neutral-text: #242220;
+    --neutral-text-slide-bar: #090A0A;
+
+    /* Red */
+    --red-100: #fee1e2;
+    --red-200: #fbcaca;
+    --red-300: #f9acab;
+    --red-400: #f87171;
+    --red-500: #ef4444;
+    --red-600: #dc2626;
+    --red-logout: #F93920;
+
+    /* Yellow */
+    --yellow-100: #fdf9c7;
+    --yellow-200: #fdea9a;
+    --yellow-300: #fdcb40;
+    --yellow-400: #fbbf24;
+    --yellow-500: #f59e0b;
+    --yellow-600: #d97706;
+
+    /* Green */
+    --green-100: #d1fadf;
+    --green-200: #a7f3d0;
+    --green-300: #6ee7b7;
+    --green-400: #34d399;
+    --green-500: #10b981;
+    --green-600: #059669;
+
+    /* pink */
+    --pink-background: #F2C7BA;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter;
+  margin: 0 auto;
+  max-width: 1140px;
+}

@@ -1,0 +1,21 @@
+/* SidebarItem.module.css */
+
+.item {
+  @apply flex items-center h-[60px] w-full;
+}
+
+.itemContent {
+  @apply h-[25px] w-[191px] ml-[44px] mt-[17px] mb-[17px] flex items-center gap-[10px];
+}
+
+.iconWrapper {
+  @apply h-[25px] w-[25px];
+}
+
+.bar {
+  @apply w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] opacity-0 transition-opacity duration-300;
+}
+
+.itemHover:hover .bar {
+  opacity: 1;
+}
