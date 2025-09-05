@@ -1,0 +1,3 @@
+.label-item:hover:not([class*='text-[var(--red-logout)]']) {
+  color: var(--blue-border-before);
+}

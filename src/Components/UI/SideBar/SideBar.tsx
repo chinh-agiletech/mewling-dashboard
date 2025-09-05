@@ -1,7 +1,22 @@
 import React from "react";
 import Icon from "../Icon/Icon";
 import TextCustom from "../TextCustom/TextCustom";
-import styles from "./SidebarItem.module.css";
+import SidebarItem from "./Components/SidebarItem";
+
+const sidebarItems = [
+  { image: "/icon/ep_setting.svg", label: "Change password" },
+  { image: "/icon/map-location.svg", label: "Venue management" },
+  { image: "/icon/user.svg", label: "Admin account management" },
+  { image: "/icon/user-settings.svg", label: "Roles & permission" },
+  { image: "/icon/two-user.svg", label: "List of Mewling app users" },
+  { image: "/icon/qc.svg", label: "Banners management" },
+  { image: "/icon/Vector.svg", label: "Notification" },
+  {
+    image: "/icon/log-out.svg",
+    label: "Log out",
+    labelClass: "text-[var(--red-logout)]",
+  },
+];
 
 const Sidebar: React.FC = () => {
   return (
@@ -26,111 +41,15 @@ const Sidebar: React.FC = () => {
       </div>
 
       {/* Menu Items */}
-      <div className="flex flex-col items-center max-h-[620px] h-full mt-[32px] max-w-[350px]">
-        <div className="h-[60px] w-full flex items-center">
-          <div className="w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="h-[25px]  w-[200px ml-[44px] mt-[17px] mb-[17px] flex items-center gap-[10px]">
-            <div className="h-[25px] w-[25px]">
-              <Icon image="/icon/ep_setting.svg" />
-            </div>
-            <div className="">
-              <TextCustom className="text-[var(--neutral-text-slide-bar)] text-[18px] font-[500]">
-                Change password
-              </TextCustom>
-            </div>
-          </div>
-        </div>
-        <div className="h-[60px] w-full flex items-center">
-          <div className="w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="h-[25px]  w-[200px ml-[44px] mt-[17px] mb-[17px] flex items-center gap-[10px]">
-            <div className="h-[25px] w-[25px]">
-              <Icon image="/icon/map-location.svg" />
-            </div>
-            <div className="">
-              <TextCustom className="text-[var(--neutral-text-slide-bar)] text-[18px] font-[500]">
-                Venue management
-              </TextCustom>
-            </div>
-          </div>
-        </div>
-        <div className="h-[60px] w-full flex items-center">
-          <div className="w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="h-[25px]  w-[200px ml-[44px] mt-[17px] mb-[17px] flex items-center gap-[10px]">
-            <div className="h-[25px] w-[25px]">
-              <Icon image="/icon/user.svg" />
-            </div>
-            <div className="">
-              <TextCustom className="text-[var(--neutral-text-slide-bar)] text-[18px] font-[500]">
-                Admin account management
-              </TextCustom>
-            </div>
-          </div>
-        </div>
-        <div className="h-[60px] w-full flex items-center">
-          <div className="w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="h-[25px]  w-[200px ml-[44px] mt-[17px] mb-[17px] flex items-center gap-[10px]">
-            <div className="h-[25px] w-[25px]">
-              <Icon image="/icon/user-settings.svg" />
-            </div>
-            <div className="">
-              <TextCustom className="text-[var(--neutral-text-slide-bar)] text-[18px] font-[500]">
-                Roles & permission
-              </TextCustom>
-            </div>
-          </div>
-        </div>
-        <div className="h-[60px] w-full flex items-center">
-          <div className="w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="h-[25px]  w-[200px ml-[44px] mt-[17px] mb-[17px] flex items-center gap-[10px]">
-            <div className="h-[25px] w-[25px]">
-              <Icon image="/icon/two-user.svg" />
-            </div>
-            <div className="">
-              <TextCustom className="text-[var(--neutral-text-slide-bar)] text-[18px] font-[500]">
-                List of Mewling app users
-              </TextCustom>
-            </div>
-          </div>
-        </div>
-        <div className="h-[60px] w-full flex items-center">
-          <div className="w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="h-[25px]  w-[200px ml-[44px] mt-[17px] mb-[17px] flex items-center gap-[10px]">
-            <div className="h-[25px] w-[25px]">
-              <Icon image="/icon/qc.svg" />
-            </div>
-            <div className="">
-              <TextCustom className="text-[var(--neutral-text-slide-bar)] text-[18px] font-[500]">
-                Banners management
-              </TextCustom>
-            </div>
-          </div>
-        </div>
-        <div className="h-[60px] w-full flex items-center">
-          <div className="w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="h-[25px] w-[200px] ml-[44px] mt-[17px] mb-[17px] flex items-center gap-[10px]">
-            <div className="h-[25px] w-[25px]">
-              <Icon image="/icon/Vector.svg" />
-            </div>
-            <div className="">
-              <TextCustom className="text-[var(--neutral-text-slide-bar)] text-[18px] font-[500]">
-                Notification
-              </TextCustom>
-            </div>
-          </div>
-        </div>
-        <div className="h-[60px] w-full flex items-center">
-          <div className="w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="h-[25px]  w-[200px ml-[44px] mt-[17px] mb-[17px] flex items-center gap-[10px]">
-            <div className="h-[25px] w-[25px]">
-              <Icon image="/icon/log-out.svg" />
-            </div>
-            <div className="">
-              <TextCustom className="text-[var(--red-logout)] text-[18px] font-[500]">
-                Log out
-              </TextCustom>
-            </div>
-          </div>
-        </div>
+      <div className="flex flex-col items-center max-h-[620px] h-full mt-[32px] max-w-[350px] space-y-5">
+        {sidebarItems.map((item, index) => (
+          <SidebarItem
+            key={index}
+            image={item.image}
+            label={item.label}
+            labelClass={item.labelClass}
+          />
+        ))}
       </div>
     </div>
   );
