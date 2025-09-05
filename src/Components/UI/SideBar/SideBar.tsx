@@ -20,10 +20,15 @@ const sidebarItems = [
 ];
 
 const Sidebar: React.FC = () => {
+  const [collapsed, setCollapsed] = React.useState(false);
+
+  const toggleSidebar = () => {
+    setCollapsed(!collapsed);
+  };
   return (
     <div
       className="max-w-[350px] w-full h-[960px] border-r-[1px]
-         border-[var(--blue-border)] bg-[var(--neutral-0)]"
+         border-[var(--blue-border)] bg-[var(--neutral-0)] position"
     >
       <div className="flex flex-col items-center h-[97px]">
         {/* Avatar circle */}
@@ -45,10 +50,16 @@ const Sidebar: React.FC = () => {
         label=""
         className="rounded-full w-[30px] h-[30px] 
         border-[1px] border-[var(--neutral-200)]
-        absolute top-[165px] left-[585px] flex items-center
+        absolute top-[165px] left-[710px] flex items-center
         "
+        onClick={toggleSidebar}
       >
-        <Icon image="./icon/angle-left-small.svg" className="ml-[2px]" />
+        <Icon
+          image="./icon/angle-left-small.svg"
+          className={`ml-[2px] transform transition-transform duration-300 ${
+            collapsed ? "rotate-180" : ""
+          }`}
+        />
       </Button>
 
       {/* Menu Items */}
@@ -59,6 +70,7 @@ const Sidebar: React.FC = () => {
             image={item.image}
             label={item.label}
             labelClass={item.labelClass}
+            collapsed={collapsed}
           />
         ))}
       </div>

@@ -6,8 +6,9 @@ import styles from "./index.module.css";
 interface SidebarItemProps {
   image: string;
   label: string;
-  labelClass?: string; // truyền class tùy chỉnh, nếu có hover sẽ dùng Tailwind class ở đây
+  labelClass?: string;
   onClick?: () => void;
+  collapsed?: boolean;
 }
 
 const SidebarItem: React.FC<SidebarItemProps> = ({
@@ -15,6 +16,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   label,
   labelClass,
   onClick,
+  collapsed = false,
 }) => {
   return (
     <div
@@ -22,23 +24,34 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       onClick={onClick}
     >
       {/* Thanh highlight bên trái */}
-      <div className="w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div
+        className={`w-[6px] h-full bg-[var(--blue-border-before)] rounded-tr-[10px] rounded-br-[10px] transition-opacity duration-300 ${
+          collapsed ? "" : "opacity-0 group-hover:opacity-100"
+        }`}
+      ></div>
 
       {/* Nội dung icon + text */}
-      <div className="h-[25px] w-[260px] ml-[38px] mt-[17px] mb-[17px] flex items-center gap-[10px]">
+      <div
+        className={`h-[25px] flex items-center gap-[10px] ml-[38px] mt-[17px] mb-[17px] ${
+          collapsed ? "w-[25px] justify-center" : "w-[260px]"
+        }`}
+      >
         <div className="h-[25px] w-[25px]">
           <Icon image={image} />
         </div>
-        <TextCustom
-          className={`${
-            labelClass ||
-            "text-[var(--neutral-text-slide-bar)] group-hover:text-[var(--blue-border-before)]"
-          } text-[18px] font-[500] letter-spacing-[0px] ${
-            styles["label-item"]
-          }`}
-        >
-          {label}
-        </TextCustom>
+
+        {!collapsed && (
+          <TextCustom
+            className={`${
+              labelClass ||
+              "text-[var(--neutral-text-slide-bar)] group-hover:text-[var(--blue-border-before)]"
+            } text-[18px] font-[500] letter-spacing-[0px] ${
+              styles["label-item"]
+            }`}
+          >
+            {label}
+          </TextCustom>
+        )}
       </div>
     </div>
   );
