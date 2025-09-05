@@ -2,6 +2,7 @@ import React from "react";
 import Icon from "../Icon/Icon";
 import TextCustom from "../TextCustom/TextCustom";
 import SidebarItem from "./Components/SidebarItem";
+import Button from "../Button/Button";
 
 const sidebarItems = [
   { image: "/icon/ep_setting.svg", label: "Change password" },
@@ -39,6 +40,16 @@ const Sidebar: React.FC = () => {
         </TextCustom>
         <div className="mt-[11px] w-full h-[1px] bg-[radial-gradient(circle,#432C2C_0%,#501C1C00_100%)]"></div>
       </div>
+
+      <Button
+        label=""
+        className="rounded-full w-[30px] h-[30px] 
+        border-[1px] border-[var(--neutral-200)]
+        absolute top-[165px] left-[585px] flex items-center
+        "
+      >
+        <Icon image="./icon/angle-left-small.svg" className="ml-[2px]" />
+      </Button>
 
       {/* Menu Items */}
       <div className="flex flex-col items-center max-h-[620px] h-full mt-[32px] max-w-[350px] space-y-5">
