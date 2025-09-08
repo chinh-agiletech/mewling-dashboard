@@ -28,7 +28,7 @@ const Sidebar: React.FC = () => {
   return (
     <div
       className="max-w-[350px] w-full h-[960px] border-r-[1px]
-         border-[var(--blue-border)] bg-[var(--neutral-0)] position"
+         border-[var(--blue-border)] bg-[var(--neutral-0)] position overflow-y-auto scrollbar-none"
     >
       <div className="flex flex-col items-center h-[97px]">
         {/* Avatar circle */}
@@ -50,7 +50,7 @@ const Sidebar: React.FC = () => {
         label=""
         className="rounded-full w-[30px] h-[30px] 
         border-[1px] border-[var(--neutral-200)]
-        absolute top-[165px] left-[710px] flex items-center
+        absolute top-[165px] left-[610px] flex items-center
         "
         onClick={toggleSidebar}
       >
